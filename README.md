@@ -15,4 +15,6 @@ Intention_Repeater_MAX.cpp is v5.28, the final version of the 5 series.
 
 MiniRepeater.c was an experiment of putting Repeater inside a custom-tailored C VM that only takes a set amount of memory, never more or less. Unclear utility.
 
+RepeaterLegacy.py is a translation of 5.28 into Python by AnthroHeart. I kept it here just in case, but I believe I never used it.
+
 ultimate_radionic_system_optimized.py is not my work. I think I had put it here to preserve it.
