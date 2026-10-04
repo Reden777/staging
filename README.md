@@ -18,3 +18,5 @@ MiniRepeater.c was an experiment of putting Repeater inside a custom-tailored C 
 RepeaterLegacy.py is a translation of 5.28 into Python by AnthroHeart. I kept it here just in case, but I believe I never used it.
 
 ultimate_radionic_system_optimized.py is not my work. I think I had put it here to preserve it.
+
+spawn.sh is a simple command to run many Repeaters (that file using the Assembly Runner) with each automatically throttling to 10% 1 CPU core usage whenever something else requests CPU. Another available option to try out is `CPUQuota`, which restricts a slice (group) of processes to only take N% of CPU among them.
