@@ -1,0 +1,27 @@
+this is a test please check console
+<script>
+import { IntentHasher } from './IntentHasher.js';
+
+// 1. Text input example
+const hasher = new IntentHasher({
+    intent: "My target intent or text",
+    iterations: 1000,
+    repeats: 50,
+    duration: 7200,      // 2 hours
+    interval: 3600,      // run every 1 hour
+    onTick: (remainingSeconds) => {
+        console.log("Time left:", IntentHasher.formatTime(remainingSeconds));
+    },
+    onBatchComplete: (result) => {
+        console.log(`Batch ${result.batchId} finished with hash:`, result.lastResult);
+    },
+    onComplete: () => {
+        console.log("All cycles completed!");
+    }
+});
+
+hasher.start();
+
+// You can cancel anytime:
+// hasher.stop();
+</script>
