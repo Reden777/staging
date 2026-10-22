@@ -2,6 +2,7 @@ import hashlib
 import requests
 import json
 import sys
+import argparse
 
 def get_sha3_512_hash(intention):
     # Generate the SHA-3-512 hash of the given intention
@@ -60,8 +61,16 @@ def load_api_key(filename):
         sys.exit(1)
 
 def main():
-    # Step 1: Take an input "Intention: "
-    intention = input("Intention: ")
+    # Parse command-line arguments
+    parser = argparse.ArgumentParser(description="True Random Influenced Intention Number Generator")
+    parser.add_argument("-i", "--intention", type=str, help="The intention string to process")
+    args = parser.parse_args()
+
+    # Step 1: Use the -i argument if provided, otherwise prompt the user
+    if args.intention is not None:
+        intention = args.intention
+    else:
+        intention = input("Intention: ")
 
     # Step 2: Get the SHA-3-512 hash and convert to an integer
     hash_integer = get_sha3_512_hash(intention)
